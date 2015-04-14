@@ -21,22 +21,22 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-    class User
-      include ActiveModel::Validations
+class User
+  include ActiveModel::Validations
 
-      attr_accessor :nip, :pesel, :regon
+  attr_accessor :nip, :pesel, :regon
 
-      validates :nip, nip: true
-      validates :pesel, pesel: true
-      validates :regon, regon: true
-    end
+  validates :nip, nip: true
+  validates :pesel, pesel: true
+  validates :regon, regon: true
+end
 
-    user = User.new
-    user.nip = 1234563218
-    user.pesel = 44051401359
-    user.regon = 12345678512347
-    user.valid?
-    => true
+user = User.new
+user.nip = 1234563218
+user.pesel = 44051401359
+user.regon = 12345678512347
+user.valid?
+=> true
 ```
 
 ## Contributing
