@@ -1,6 +1,6 @@
 # PolishValidatorsRails [![Build Status](https://travis-ci.org/dbackowski/polish_validators_rails.svg?branch=master)](https://travis-ci.org/dbackowski/polish_validators_rails)
 
-Rails validators for polish numbers: PESEL, NIP, REGON
+Rails validators for polish numbers: PESEL, NIP, REGON, IBAN (PL)
 
 ## Installation
 
@@ -24,17 +24,19 @@ Or install it yourself as:
 class User
   include ActiveModel::Validations
 
-  attr_accessor :nip, :pesel, :regon
+  attr_accessor :nip, :pesel, :regon, :iban
 
   validates :nip, nip: true
   validates :pesel, pesel: true
   validates :regon, regon: true
+  validates :iban, iban: true
 end
 
 user = User.new
 user.nip = 1234563218
 user.pesel = 44051401359
 user.regon = 12345678512347
+user.iban = 'PL61109010140000071219812874'
 user.valid?
 => true
 ```

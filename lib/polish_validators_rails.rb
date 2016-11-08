@@ -2,6 +2,13 @@ require 'polish_validators_rails/version'
 require 'polish_validators'
 require 'active_record'
 
+class IbanValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    validator = ::PolishValidators::IbanValidator.new(value)
+    record.errors.add(attribute, @options[:message] || 'Invalid IBAN format') unless validator.valid?
+  end
+end
+
 class NipValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     validator = ::PolishValidators::NipValidator.new(value)

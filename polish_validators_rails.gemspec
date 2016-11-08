@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = PolishValidatorsRails::VERSION
   spec.authors       = ["Damian Baćkowski"]
   spec.email         = ["dbackowski@artcom.pl"]
-  spec.summary       = %q{Rails validators for polish numbers: PESEL, NIP, REGON}
-  spec.description   = %q{Rails validators for polish numbers: PESEL, NIP, REGON}
+  spec.summary       = %q{Rails validators for polish numbers: PESEL, NIP, REGON, IBAN}
+  spec.description   = %q{Rails validators for polish numbers: PESEL, NIP, REGON, IBAN}
   spec.homepage      = "https://github.com/dbackowski/polish_validators_rails"
   spec.license       = "MIT"
 
@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'polish_validators', '= 1.0.0', '= 1.0.0'
-  spec.add_runtime_dependency 'activerecord', '>= 4.0.1', '< 5.0'
-  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_runtime_dependency 'polish_validators', '>= 1.0.1'
+  spec.add_runtime_dependency 'activerecord', '>= 4.0'
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", "~> 11.3.0"
+  spec.add_development_dependency "rspec", "~> 3.5.0"
 end
